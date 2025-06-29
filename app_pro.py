@@ -19,8 +19,7 @@ topic = st.text_input("Enter a research topic (e.g., hyperspectral, LiDAR, SAR)"
 if topic:
     results = get_latest_papers(topic)
     for i, paper in enumerate(results, 1):
-        st.markdown(f"**{i}. {paper['title']}**  
-🔗 [View Paper]({paper['link']})")
+        st.markdown(f"**{i}. {paper['title']}**  \n🔗 [View Paper]({paper['link']})")
 
 st.header("📥 Hyperspectral Metadata")
 meta_path = "hyperspectral_metadata/aviris_metadata.csv"
