@@ -1,0 +1,3 @@
+Granule ID,Start Time,End Time,Data Center,URL
+AVIRIS_SCENE_001,2024-01-10T10:00:00Z,2024-01-10T10:05:00Z,LPDAAC,https://aviris.jpl.nasa.gov/data/scene001
+AVIRIS_SCENE_002,2024-01-15T11:00:00Z,2024-01-15T11:05:00Z,LPDAAC,https://aviris.jpl.nasa.gov/data/scene002
