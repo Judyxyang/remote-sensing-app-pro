@@ -44,8 +44,7 @@ if data_source == "arXiv":
     if topic:
         results = get_latest_papers(topic)
         for i, paper in enumerate(results, 1):
-            st.markdown(f"**{i}. {paper['title']}**  
-🔗 [View Paper]({paper['link']})")
+            st.markdown(f"**{i}. {paper['title']}**  \n[Link to paper]({paper['link']})")
 
 elif data_source == "NASA CMR":
     st.header("🌐 NASA Earthdata Search")
