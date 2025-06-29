@@ -1,4 +1,5 @@
 import streamlit as st
+import urllib.parse
 import pandas as pd
 import feedparser
 import os
@@ -6,10 +7,12 @@ import os
 # Function to fetch latest papers from ArXiv
 def get_latest_papers(topic="remote sensing"):
     base_url = "http://export.arxiv.org/api/query?"
-    query = f"search_query=all:{topic}&start=0&max_results=5&sortBy=lastUpdatedDate&sortOrder=descending"
+    safe_topic = urllib.parse.quote(topic.strip())  # <-- sanitize the input
+    query = f"search_query=all:{safe_topic}&start=0&max_results=5&sortBy=lastUpdatedDate&sortOrder=descending"
     feed = feedparser.parse(base_url + query)
     papers = [{"title": entry.title, "link": entry.link} for entry in feed.entries]
     return papers
+
 
 # Streamlit App
 st.title("🛰️ Remote Sensing App (Pro Edition)")
